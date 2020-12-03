@@ -6,20 +6,30 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.ClipData;
+import android.content.ContentResolver;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
+import android.webkit.MimeTypeMap;
 import android.widget.Button;
+import android.widget.Toast;
 
 import com.example.fragmentapp.R;
 
+import com.google.android.gms.tasks.Continuation;
+import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.annotations.Nullable;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
+import com.google.firebase.storage.StorageTask;
 import com.google.firebase.storage.UploadTask;
 
 import java.io.File;
@@ -28,19 +38,23 @@ import java.util.ArrayList;
 public class home extends AppCompatActivity {
     private static final int RESULT_LOAD_IMAGE = 1543;
     private UploadPicturesAdapter mPictureAdapter;
-    private Button mUpload,fini,log;
+    private Button mUpload,fini,log,nxt,nxt2;
     private RecyclerView mUploadList;
     private ArrayList<Uri> mImagesURIs;
     private StorageReference mStorageRef;
+    private Uri mImageUri;
 
+    private DatabaseReference mDatabaseRef;
+
+    private StorageTask mUploadTask;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
         initializeViews();
 
-        mStorageRef = FirebaseStorage.getInstance().getReference("Store");
-
+        mStorageRef = FirebaseStorage.getInstance().getReference("uploads");
+        mDatabaseRef = FirebaseDatabase.getInstance().getReference("uploads");
         setOnClickListeners();
         mImagesURIs = new ArrayList<>();
     }
@@ -94,6 +108,21 @@ public class home extends AppCompatActivity {
 
             }
         });
+        nxt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i= new Intent(home.this, ImagesActivity.class);
+                startActivity(i);
+            }
+        });
+        nxt2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i =new Intent(home.this,ModelUpload.class);
+                startActivity(i);
+            }
+        });
+
 
     }
 
@@ -102,5 +131,8 @@ public class home extends AppCompatActivity {
         mUploadList = findViewById(R.id.rv_upload_list);
         fini=findViewById(R.id.btn_accommodation_select);
         log=findViewById(R.id.logout_btn);
+        nxt=findViewById(R.id.nxt);
+        nxt2=findViewById(R.id.ad11);
     }
+
 }

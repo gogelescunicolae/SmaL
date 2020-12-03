@@ -14,6 +14,8 @@
         android:theme="@style/Theme.FragmentApp">
         <activity android:name=".firebase.login_act"></activity>
         <activity android:name=".firebase.home" />
+        <activity android:name=".firebase.ImagesActivity" />
+        <activity android:name=".firebase.ModelUpload" />
         <activity android:name=".firebase.RegA" />
         <activity android:name=".fragment_room.LoginActivitityLab5" />
         <activity android:name=".fragment_room.EditData" />

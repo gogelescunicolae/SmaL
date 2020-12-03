@@ -12,13 +12,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.FragmentApp">
-        <activity android:name=".firebase.down.test"></activity>
-        <activity android:name=".firebase.date_set" />
-        <activity
-            android:name=".firebase.down.ImagesActivity"
-            android:label="@string/title_activity_afis"
-            android:theme="@style/Theme.FragmentApp.NoActionBar" />
-        <activity android:name=".firebase.login_act" />
+        <activity android:name=".firebase.login_act"></activity>
         <activity android:name=".firebase.home" />
         <activity android:name=".firebase.RegA" />
         <activity android:name=".fragment_room.LoginActivitityLab5" />

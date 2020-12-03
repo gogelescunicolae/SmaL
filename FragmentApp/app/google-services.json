@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "311441995860",
+    "firebase_url": "https://smalab-512ed.firebaseio.com",
+    "project_id": "smalab-512ed",
+    "storage_bucket": "smalab-512ed.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:311441995860:android:d58aac4add6d7dbb9695c1",
+        "android_client_info": {
+          "package_name": "com.example.fragmentapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "311441995860-86dplk5qmr1e0qbf64ldvna4ki8l6lpj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCmTOVMJ_FXGZ6rnmsbcJ1-TRrA1ppccdM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "311441995860-86dplk5qmr1e0qbf64ldvna4ki8l6lpj.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

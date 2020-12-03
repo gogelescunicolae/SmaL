@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragment_room.EditData">
+
+    <TextView
+        android:id="@+id/txt"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:gravity="center"
+        android:text="ID ACCOUNT"
+        />
+
+    <TextView
+        android:layout_below="@+id/txt"
+        android:id="@+id/IDEmailAccount"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:gravity="center"
+        android:text="ID ACCOUNT"
+        />
+
+    <EditText
+        android:id="@+id/newDataEmail"
+        android:layout_below="@+id/IDEmailAccount"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:hint="username"
+        ></EditText>
+    <EditText
+        android:id="@+id/newDataName"
+        android:layout_below="@+id/newDataEmail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:hint="parola"
+        ></EditText>
+    <Button
+        android:layout_below="@+id/newDataName"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:id="@+id/changeEmailAccount"
+        android:text="Change!"
+        />
+
+</RelativeLayout>
